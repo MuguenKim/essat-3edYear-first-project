@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-MiniprojectApplication<miniproject>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "mainClass": "tn.essat.chakerproject.miniproject.MiniprojectApplication",
+      "projectName": "miniproject",
+      "args": ""
+    }
+  ]
+}
