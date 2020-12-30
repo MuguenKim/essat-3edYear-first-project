@@ -1,0 +1,53 @@
+<div>
+  <div class="row">
+    <div class="col-md-12"></div>
+  </div>
+  <div class="row mt-3">
+    <div class="list-group col-md-4"></div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          Ajouter un PFE
+        </div>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputEmail3" class="col-sm-9 control-label"
+              >Titre PFE</label
+            >
+            <div class="col-sm-13">
+              <input
+                class="form-control"
+                type="text"
+                name="titre"
+                [(ngModel)]="pfe.titre"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="selected" class="col-sm-9 control-label"
+              >Type PFE</label
+            >
+            <select
+              id="Selected"
+              class="form-control"
+              name="type"
+              [(ngModel)]="pfe.typepfe"
+            >
+              <option *ngFor="let type of types " [ngValue]="type"
+                >{{type.type}}</option
+              >
+            </select>
+          </div>
+          <button
+            type="button"
+            class="btn btn-primary btn-lg btn-block"
+            (click)="save()"
+          >
+            Ajouter un PFE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

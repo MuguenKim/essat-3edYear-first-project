@@ -1,0 +1,86 @@
+<div>
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form-inline">
+        <div class="col-md-2">
+          <button class="btn btn-danger btn-block mt-2" (click)="addpfe()>
+            Add PFE
+          </button>
+        </div>
+        <div class="col-md-3 mt-2 mr-0 mx-sm-3">
+          <input
+            type="text"
+            class="form-control mr-0"
+            placeholder="Titre du PFE a Chercher"
+            name="title"
+            [(ngModel)]="search_term"
+          />
+        </div>
+        <div class="mx-sm-2 col-md-2">
+          <button class="btn btn-primary btn-block mt-2" (click)="search()">
+            Chercher un PFE
+          </button>
+        </div>
+        <div class="mx-sm-3 col-md-2"></div>
+      </form>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="list-group col-md-4">
+      <a (click)="getAll()" class="list-group-item list-group-item-action">
+        <i class="fab fa-windows"></i> Tous les PFEs<span
+          class="badge badge-pill badge-info"
+          >{{pfes.length}}</span
+        >
+      </a>
+      <a
+        (click)="getByCat(type.id)"
+        class="list-group-item list-group-item-action"
+        *ngFor="let type of types"
+      >
+        <i class="fab fa-windows"></i> Tous les {{type.type}}<span
+          class="badge badge-pill badge-info"
+          >{{type.pfes.length}}</span
+        >
+      </a>
+    </div>
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          Liste des PFEs
+        </div>
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Titre</th>
+              <th scope="col">Type</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let pfe of pfes">
+              <th scope="row">
+                {{pfe.id}}
+              </th>
+              <td>
+                {{pfe.title}}
+              </td>
+              <td>
+                {{pfe.type.type}}
+              </td>
+              <td>
+                <button
+                  class="btn btn-danger btn-block mt-2"
+                  (click)="supp(pfe.id)"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
